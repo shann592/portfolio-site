@@ -9,13 +9,13 @@ function Projects() {
       variants={routeVariants}
       initial="initial"
       animate="final"
-      className="w-full flex flex-col justify-center items-center h-full"
+      className="w-full flex flex-col dark:dark-main-bg-color justify-center items-center h-full dark:text-white gap-1 pt-28 pb-10"
     >
       <motion.h2
         variants={childVariants}
         initial="initial"
         animate="final"
-        className="rajdhani-semibold text-left md:px-0 px-[95px] w-[500px] md:w-[800px] ml-1 text-2xl mb-2 font-rajdhani underline"
+        className="rajdhani-semibold text-left w-80 md:w-[800px] ml-1 text-2xl font-rajdhani underline"
       >
         Projects
       </motion.h2>
@@ -23,7 +23,7 @@ function Projects() {
         variants={childVariants}
         initial="initial"
         animate="final"
-        className="md:w-[800px] w-[500px] flex justify-center md:justify-start items-center gap-5 flex-wrap"
+        className="md:w-[800px] w-[500px] flex justify-center md:justify-start items-center gap-8 flex-wrap"
       >
         {projectsData.map((p, index) => (
           <ProjectCard

@@ -61,7 +61,7 @@ export default function Contact() {
       variants={routeVariants}
       initial="initial"
       animate="final"
-      className="w-full flex flex-col justify-center items-center h-full gap-1"
+      className="w-full flex flex-col justify-center items-center h-full gap-1 dark:dark-main-bg-color dark:text-white pt-28 md:pt-10 pb-10"
     >
       <motion.h2
         variants={childVariants}
@@ -81,7 +81,7 @@ export default function Contact() {
         <input
           type="text"
           placeholder="Name"
-          className="py-2 px-3 border-2 border-gray-300 rounded-md"
+          className="py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
           name="from_name"
           onChange={handleChange}
           value={formData.from_name}
@@ -89,19 +89,19 @@ export default function Contact() {
         <input
           type="email"
           placeholder="Email"
-          className="py-2 px-3 border-2 border-gray-300 rounded-md"
+          className="py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
           name="from_email"
           onChange={handleChange}
           value={formData.from_email}
         />
         <textarea
           placeholder="Message"
-          className="min-h-52 py-2 px-3 border-2 border-gray-300 rounded-md"
+          className="min-h-52 py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
           name="message"
           onChange={handleChange}
           value={formData.message}
         ></textarea>
-        <button className="w-28 bg-gradient-to-r from-yellow-500 to-pink-500 text-white font-rajdhani text-xl rounded-md py-2">
+        <button className="w-28 bg-gradient-to-r from-yellow-500 to-pink-500 text-white rajdhani-bold font-rajdhani text-xl rounded-md py-2">
           Sent
         </button>
       </motion.form>

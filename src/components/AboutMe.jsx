@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 
+import downloadIcon from '../assets/download.png'
+import resumeFile from '../assets/resume.pdf'
 import profilePic from '../assets/profile_pic.jpg'
 import Tag from './Tag'
 import { routeVariants, childVariants } from '../variants'
@@ -9,7 +11,7 @@ export default function AboutMe() {
       variants={routeVariants}
       initial="initial"
       animate="final"
-      className="w-full flex flex-col justify-center items-center h-full gap-1 mt-10"
+      className="w-full flex flex-col justify-center items-center h-full gap-1 pt-28 md:pt-0 pb-10"
     >
       <motion.h2
         variants={childVariants}
@@ -23,7 +25,7 @@ export default function AboutMe() {
         variants={childVariants}
         initial="initial"
         animate="final"
-        className="bg-white overflow-hidden md:w-[600px] w-[350px] border-2 border-black rounded-md md:grid grid-cols-[200px,auto] min-h-28"
+        className="dark:text-white dark:border-none dark:dark-nonmain-bg-color overflow-hidden md:w-[600px] w-[350px] border-2 border-black rounded-md md:grid grid-cols-[200px,auto] min-h-28"
       >
         <div>
           <img
@@ -43,11 +45,17 @@ export default function AboutMe() {
             exploring coding blogs.
           </p>
           <p className="font-rajdhani pt-4 flex items-center flex-wrap gap-1">
-            <span className="font-bold">Skills:</span>
+            <span className="font-bold">Tech Stack:</span>
             <Tag tagName="JavaScript" />
-            <Tag tagName="React.js" />
-            <Tag tagName="Express.js" />
+            <Tag tagName="React" />
+            <Tag tagName="Express" />
             <Tag tagName="TailwindCSS" />
+          </p>
+          <p className="font-rajdhani pt-4 flex items-center rajdhani-bold flex-wrap gap-1">
+            Resume
+            <a href={resumeFile} download>
+              <img className="w-7 h-7" src={downloadIcon} alt="download" />
+            </a>
           </p>
         </section>
       </motion.article>

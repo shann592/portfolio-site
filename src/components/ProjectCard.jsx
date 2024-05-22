@@ -8,13 +8,13 @@ function ProjectCard({
   githubLink,
 }) {
   return (
-    <div className="w-80 min-h-28 border-2 border-black rounded-md overflow-hidden">
+    <div className="w-80 min-h-28 border-2 border-black rounded-md overflow-hidden dark:dark-nonmain-bg-color">
       <img
         className="w-full h-52 object-cover object-center"
         src={projectImg}
         alt={`${projectName} image`}
       />
-      <div className="p-3 bg-white">
+      <div className="p-3 bg-white dark:dark-nonmain-bg-color">
         <h2 className="text-xl font-bold">{projectName}</h2>
         <p className="flex mt-2 gap-1 items-center flex-wrap">
           {techStackUsed.map((s, index) => (
