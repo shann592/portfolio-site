@@ -11,7 +11,7 @@ export default function AboutMe() {
       variants={routeVariants}
       initial="initial"
       animate="final"
-      className="w-full flex flex-col justify-center items-center h-full gap-1 pt-28 md:pt-0 pb-10"
+      className="w-full flex flex-col justify-center items-center h-full gap-1 pt-28  pb-10"
     >
       <motion.h2
         variants={childVariants}

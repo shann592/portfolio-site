@@ -61,7 +61,7 @@ export default function Contact() {
       variants={routeVariants}
       initial="initial"
       animate="final"
-      className="w-full flex flex-col justify-center items-center h-full gap-1 dark:dark-main-bg-color dark:text-white pt-28 md:pt-10 pb-10"
+      className="w-full flex flex-col justify-center items-center h-full gap-1 dark:dark-main-bg-color dark:text-white pt-28 pb-10"
     >
       <motion.h2
         variants={childVariants}
