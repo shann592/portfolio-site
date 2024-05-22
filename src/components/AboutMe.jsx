@@ -54,7 +54,11 @@ export default function AboutMe() {
           <p className="font-rajdhani pt-4 flex items-center rajdhani-bold flex-wrap gap-1">
             Resume
             <a href={resumeFile} download>
-              <img className="w-7 h-7" src={downloadIcon} alt="download" />
+              <img
+                className="w-8 h-8 hover:dark:bg-gray-200 ease-linear hover:bg-gray-400 duration-700 p-1 rounded-sm"
+                src={downloadIcon}
+                alt="download"
+              />
             </a>
           </p>
         </section>
