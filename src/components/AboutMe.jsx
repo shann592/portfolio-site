@@ -25,7 +25,7 @@ export default function AboutMe() {
         variants={childVariants}
         initial="initial"
         animate="final"
-        className="dark:text-white dark:border-none dark:dark-nonmain-bg-color overflow-hidden md:w-[600px] w-[350px] border-2 border-black rounded-md md:grid grid-cols-[200px,auto] min-h-28"
+        className="dark:text-white dark:border-none dark:dark-nonmain-bg-color bg-white overflow-hidden md:w-[600px] w-[350px] border-2 border-black rounded-md md:grid grid-cols-[200px,auto] min-h-28"
       >
         <div>
           <img
