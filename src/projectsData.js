@@ -2,6 +2,7 @@ import chatRoomImg from './assets/project_images/chat_room.png'
 import movieManiacImg from './assets/project_images/movie_maniac.png'
 import passwordGenIcon from './assets/project_images/password_generator.png'
 import jobsApiIcon from './assets/project_images/jobs_api.png'
+import portfolioIcon from './assets/project_images/portfolio_site.png'
 const projectsData = [
   {
     demoLink: 'https://shann-movie-maniac.netlify.app',
@@ -30,6 +31,13 @@ const projectsData = [
     projectImg: jobsApiIcon,
     techStackUsed: ['Express', 'MongoDB', 'SwaggerUI'],
     githubLink: 'https://github.com/shann592/jobs-api',
+  },
+  {
+    demoLink: 'https://shann-portfolio-site.netlify.app',
+    projectName: 'Portfolio Site',
+    projectImg: portfolioIcon,
+    techStackUsed: ['React', 'TailwindCSS', 'Vite'],
+    githubLink: 'https://github.com/shann592/portfolio-site',
   },
 ]
 
