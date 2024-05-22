@@ -27,12 +27,12 @@ export default function Header() {
   }, [])
   return (
     <nav className="bg-white dark:dark-nonmain-bg-color dark:text-white fixed md:static z-50 px-3 py-3 flex items-center justify-between w-full border-b-[1px] border-gray-400 font-rajdhani">
-      <h2 className="text-3xl rajdhani-bold">
+      <h2 className="text-3xl rajdhani-bold mr-4 md:mr-0">
         Shantanu <span className="hidden md:inline-block">Singh</span>
       </h2>
       <ul className="flex items-center min-w-32 gap-3 md:gap-8 mr-5 text-lg">
         <li
-          className={`mr-1 md:mr-0 p-2 cursor-pointer flex items-center justify-center ${
+          className={`p-2 cursor-pointer flex items-center justify-center ${
             !isDarkMode && 'bg-gray-300'
           } rounded-md`}
           onClick={handleClick}
