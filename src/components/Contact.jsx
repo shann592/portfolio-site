@@ -1,15 +1,30 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { send } from 'emailjs-com'
+import { z } from 'zod'
+import { useForm } from 'react-hook-form'
 import config from '../config'
 
 import { routeVariants, childVariants } from '../variants'
+import { zodResolver } from '@hookform/resolvers/zod'
+
+const formSchema = z.object({
+  from_name: z
+    .string()
+    .min(3, { message: 'Name should be atleast 3 character long' }),
+  from_email: z.string().email('Enter a valid email'),
+  message: z
+    .string()
+    .min(15, { message: 'Message should be atleast 15 character long' }),
+})
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    from_name: '',
-    message: '',
-    from_email: '',
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(formSchema),
   })
 
   const handleChange = (e) => {
@@ -22,38 +37,18 @@ export default function Contact() {
     })
   }
 
-  const sendMessage = async () => {
+  const sendMessage = async (data) => {
     try {
       const resp = await send(
         config.emailJSServiceId,
         config.emailJSTemplateId,
-        formData,
+        data,
         config.emailJSPublicKey
       )
       alert('Message Sent 👍')
     } catch (error) {
       alert('Something went wrong 💥')
     }
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (
-      formData.from_email === '' &&
-      formData.from_name === '' &&
-      formData.message === ''
-    ) {
-      alert('Please fill the form correctly 🚨')
-      return
-    }
-    sendMessage()
-    setFormData((prev) => {
-      return {
-        from_name: '',
-        message: '',
-        from_email: '',
-      }
-    })
   }
 
   return (
@@ -75,7 +70,9 @@ export default function Contact() {
         variants={childVariants}
         initial="initial"
         animate="final"
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit((data) => {
+          sendMessage(data)
+        })}
         className="flex flex-col w-[300px] md:w-[500px] min-h-56 gap-3 text-lg py-2"
       >
         <input
@@ -83,25 +80,34 @@ export default function Contact() {
           placeholder="Name"
           className="py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
           name="from_name"
-          onChange={handleChange}
-          value={formData.from_name}
+          {...register('from_name')}
         />
+        {errors.from_name && (
+          <em className="text-sm text-red-500">{errors.from_name.message}</em>
+        )}
         <input
           type="email"
           placeholder="Email"
           className="py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
           name="from_email"
-          onChange={handleChange}
-          value={formData.from_email}
+          {...register('from_email')}
         />
+        {errors.from_email && (
+          <em className="text-sm text-red-500">{errors.from_email.message}</em>
+        )}
         <textarea
           placeholder="Message"
           className="min-h-52 py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
           name="message"
-          onChange={handleChange}
-          value={formData.message}
+          {...register('message')}
         ></textarea>
-        <button className="w-28 bg-gradient-to-r from-yellow-500 to-pink-500 text-white rajdhani-bold font-rajdhani text-xl rounded-md py-2">
+        {errors.message && (
+          <em className="text-sm text-red-500">{errors.message.message}</em>
+        )}
+        <button
+          type="submit"
+          className="w-28 bg-gradient-to-r from-yellow-500 to-pink-500 text-white rajdhani-bold font-rajdhani text-xl rounded-md py-2"
+        >
           Sent
         </button>
       </motion.form>
