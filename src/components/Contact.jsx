@@ -17,7 +17,7 @@ const formSchema = z.object({
   from_email: z.string().email('Enter a valid email'),
   message: z
     .string()
-    .min(15, { message: 'Message should be atleast 15 character long' }),
+    .min(10, { message: 'Message should be atleast 15 character long' }),
 })
 
 export default function Contact() {
@@ -90,7 +90,7 @@ export default function Contact() {
           <input
             type="text"
             placeholder="Name"
-            className="py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
+            className="py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400 dark:text-black"
             name="from_name"
             {...register('from_name')}
           />
@@ -100,7 +100,7 @@ export default function Contact() {
           <input
             type="email"
             placeholder="Email"
-            className="py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
+            className="py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400 dark:text-black"
             name="from_email"
             {...register('from_email')}
           />
@@ -111,7 +111,7 @@ export default function Contact() {
           )}
           <textarea
             placeholder="Message"
-            className="min-h-52 py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400"
+            className="min-h-52 py-2 px-3 border-2 border-gray-300 rounded-md dark:border-gray-400 dark:text-black"
             name="message"
             {...register('message')}
           ></textarea>

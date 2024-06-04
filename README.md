@@ -8,6 +8,8 @@ Welcome to the Portfolio-Site App! This application is built using ReactJS and T
 - Tailwind CSS: A utility-first CSS framework for rapid UI development.
 - Framer Motion: Used for smooth route animations.
 - Email.js SDK: Enables emailing functionality directly from the app.
+- Toast notification with react-toastify.
+- react-hook-form for form handling.
 
 ## Getting Started
 
@@ -41,3 +43,4 @@ Run dev server locally
 
 ```bash
   npm run dev
+```
