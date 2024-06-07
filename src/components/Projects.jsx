@@ -15,7 +15,7 @@ function Projects() {
         variants={childVariants}
         initial="initial"
         animate="final"
-        className="rajdhani-semibold text-left w-80 md:w-[800px] ml-1 text-2xl font-rajdhani underline"
+        className="rajdhani-semibold text-left w-80 md:w-5/6 ml-1 text-2xl font-rajdhani underline"
       >
         Projects
       </motion.h2>
@@ -23,7 +23,7 @@ function Projects() {
         variants={childVariants}
         initial="initial"
         animate="final"
-        className="md:w-[800px] w-[500px] flex justify-center md:justify-start items-center gap-8 flex-wrap"
+        className="md:w-5/6 w-[500px] flex justify-center md:justify-start items-center gap-8 flex-wrap"
       >
         {projectsData.map((p, index) => (
           <ProjectCard

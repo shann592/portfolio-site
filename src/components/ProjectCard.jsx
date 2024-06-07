@@ -8,7 +8,11 @@ function ProjectCard({
   githubLink,
 }) {
   return (
-    <div className="w-80 min-h-28 border-2 border-black rounded-md overflow-hidden dark:dark-nonmain-bg-color">
+    <a
+      href={demoLink}
+      target="_blank"
+      className="w-80 min-h-28 border-2 border-black rounded-md overflow-hidden dark:dark-nonmain-bg-color hover:scale-105 duration-700 ease-in-out cursor-pointer"
+    >
       <img
         className="w-full h-52 object-cover object-center"
         src={projectImg}
@@ -30,7 +34,7 @@ function ProjectCard({
           </a>
         </p>
       </div>
-    </div>
+    </a>
   )
 }
 export default ProjectCard
