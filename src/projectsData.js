@@ -6,6 +6,14 @@ import portfolioIcon from "./assets/project_images/portfolio_site.png";
 import dummy_ecomm from "./assets/project_images/dummy-ecomm-site.png";
 const projectsData = [
   {
+    demoLink: "https://dummy-ecomm.netlify.app/",
+    projectName: "React E-Commerse Site",
+    projectImg: dummy_ecomm,
+    techStackUsed: ["React", "TailwindCSS", "Vite"],
+    githubLink: "https://github.com/shann592/react-e-commerce-site",
+  },
+
+  {
     demoLink: "https://shann-movie-maniac.netlify.app",
     projectName: "Movie Maniac",
     projectImg: movieManiacImg,
@@ -39,13 +47,6 @@ const projectsData = [
     projectImg: portfolioIcon,
     techStackUsed: ["React", "TailwindCSS", "Vite"],
     githubLink: "https://github.com/shann592/portfolio-site",
-  },
-  {
-    demoLink: "https://dummy-ecomm.netlify.app/",
-    projectName: "React E-Commerse Site",
-    projectImg: dummy_ecomm,
-    techStackUsed: ["React", "TailwindCSS", "Vite"],
-    githubLink: "https://github.com/shann592/react-e-commerce-site",
   },
 ];
 
